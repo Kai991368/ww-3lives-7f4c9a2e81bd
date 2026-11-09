@@ -7,7 +7,19 @@
     <meta name="description" content="写给雯雯的三生三世" />
     <title>雯雯 · 三生三世</title>
     <link rel="preload" as="image" href="public/photos/04.jpg" />
-    <link rel="stylesheet" href="styles.css?v=20261109-3" />
+    <link rel="stylesheet" href="styles.css?v=20261109-4" />
+    <script>
+      window.openSanshengStory = function () {
+        var opening = document.getElementById("opening");
+        var firstChapter = document.getElementById("chapter-one");
+        if (!opening) return;
+        opening.classList.add("is-open");
+        opening.setAttribute("aria-hidden", "true");
+        opening.style.pointerEvents = "none";
+        document.body.classList.add("story-open");
+        if (firstChapter) firstChapter.scrollIntoView();
+      };
+    </script>
   </head>
   <body>
     <div class="opening" id="opening" aria-labelledby="opening-title">
@@ -17,7 +29,13 @@
         <p class="opening__for">写给雯雯</p>
         <h1 id="opening-title">三生三世</h1>
         <p class="opening__line">若时间真的有三生，我想每一世都更早一点遇见你。</p>
-        <button class="seal-button" id="enter-story" type="button">
+        <button
+          class="seal-button"
+          id="enter-story"
+          type="button"
+          onclick="window.openSanshengStory()"
+          ontouchend="window.openSanshengStory()"
+        >
           <span>翻开我们的三生</span>
         </button>
       </div>
@@ -156,6 +174,6 @@
       <p class="film-credit">Music: “Moonlight” by Scott Buckley · CC BY 4.0</p>
     </dialog>
 
-    <script src="app.js?v=20261109-3" defer></script>
+    <script src="app.js?v=20261109-4" defer></script>
   </body>
 </html>

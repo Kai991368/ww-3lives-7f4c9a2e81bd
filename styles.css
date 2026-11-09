@@ -80,6 +80,7 @@ button:focus-visible {
 
 .opening__content {
   position: relative;
+  z-index: 1;
   width: min(620px, calc(100% - 48px));
   padding: 16vh 0 7vh;
   text-align: center;
@@ -111,6 +112,7 @@ button:focus-visible {
 
 .seal-button {
   position: relative;
+  z-index: 2;
   min-width: 184px;
   min-height: 54px;
   padding: 12px 24px;
@@ -118,6 +120,8 @@ button:focus-visible {
   border-radius: 2px;
   background: rgba(17, 16, 20, .32);
   cursor: pointer;
+  touch-action: manipulation;
+  -webkit-tap-highlight-color: transparent;
   backdrop-filter: blur(10px);
 }
 
