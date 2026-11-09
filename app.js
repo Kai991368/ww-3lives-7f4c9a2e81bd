@@ -38,7 +38,7 @@ const photoStories = [
   { chapter: "今生", line: "我牵着你的手，也牵住了往后所有清晨与晚归。", motion: "float" },
   { chapter: "今生", line: "和你一起做点傻事，就是我最舍不得结束的浪漫。", motion: "curtain" },
   { chapter: "今生", line: "转身之后仍然是你，这就是我想要的长长久久。", motion: "drift-left" },
-  { chapter: "今生", line: "这一枚戒指很小，却装得下我对余生所有的认真。", motion: "focus" },
+  { chapter: "今生", line: "你轻轻握住我的手，我便相信余生真的有了归处。", motion: "focus" },
   { chapter: "今生", line: "我们并肩坐在这里，像坐进了未来每一个平凡日子。", motion: "veil" },
   { chapter: "今生", line: "三生太远，我只想先把这一生好好交给你。", motion: "reveal" },
 ];
