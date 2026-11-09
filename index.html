@@ -1,0 +1,159 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+    <meta name="theme-color" content="#111014" />
+    <meta name="robots" content="noindex, nofollow, noarchive, noimageindex" />
+    <meta name="description" content="写给雯雯的三生三世" />
+    <title>雯雯 · 三生三世</title>
+    <link rel="preload" as="image" href="public/photos/04.jpg" />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <div class="opening" id="opening" aria-labelledby="opening-title">
+      <img class="opening__photo" src="public/photos/04.jpg" alt="" />
+      <div class="opening__veil" aria-hidden="true"></div>
+      <div class="opening__content">
+        <p class="opening__for">写给雯雯</p>
+        <h1 id="opening-title">三生三世</h1>
+        <p class="opening__line">若时间真的有三生，我想每一世都更早一点遇见你。</p>
+        <button class="seal-button" id="enter-story" type="button">
+          <span>翻开我们的三生</span>
+        </button>
+      </div>
+    </div>
+
+    <header class="story-nav" aria-label="章节导航">
+      <button class="story-nav__mark" data-target="chapter-one" type="button" aria-label="前往第一世">
+        <span>一</span><i></i>
+      </button>
+      <button class="story-nav__mark" data-target="chapter-two" type="button" aria-label="前往第二世">
+        <span>二</span><i></i>
+      </button>
+      <button class="story-nav__mark" data-target="chapter-three" type="button" aria-label="前往第三世">
+        <span>今</span><i></i>
+      </button>
+      <button class="icon-button film-button" id="open-film" type="button" title="观看三生短片" aria-label="观看三生短片">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M8 5.5v13l10-6.5z" /></svg>
+      </button>
+      <button class="icon-button sound-button" id="toggle-sound" type="button" title="播放或暂停音乐" aria-label="播放或暂停音乐" hidden>
+        <svg class="sound-on" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 9v6h4l5 4V5L8 9H4zm12.5 3c0-1.8-1-3.3-2.5-4v8c1.5-.7 2.5-2.2 2.5-4z" /></svg>
+        <svg class="sound-off" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 9v6h4l5 4V5L8 9H4zm12.2.9L15 11.1l1.2 1.2-1.2 1.2 1.2 1.2 1.2-1.2 1.2 1.2 1.2-1.2-1.2-1.2 1.2-1.2-1.2-1.2-1.2 1.2z" /></svg>
+      </button>
+    </header>
+
+    <main id="story">
+      <section class="chapter chapter--mist" id="chapter-one" data-chapter="0">
+        <div class="chapter-hero">
+          <picture>
+            <source media="(min-width: 721px)" srcset="public/photos/07.jpg" />
+            <img src="public/photos/01.jpg" alt="雯雯与恋人的蓝白古装合影" />
+          </picture>
+          <div class="chapter-hero__wash" aria-hidden="true"></div>
+          <div class="chapter-hero__title reveal">
+            <p>第一世</p>
+            <h2>明月初逢</h2>
+            <span>隔着旧时光，我还是会一眼认出你。</span>
+          </div>
+        </div>
+        <div class="chapter-copy reveal">
+          <p>若前世真的存在，</p>
+          <p>我想我们一定在某一轮明月下见过。</p>
+          <strong>“原来你在这里。”</strong>
+        </div>
+        <div class="photo-flow" id="gallery-first" aria-label="第一世照片"></div>
+      </section>
+
+      <section class="chapter chapter--red" id="chapter-two" data-chapter="1">
+        <div class="chapter-hero">
+          <picture>
+            <source media="(min-width: 721px)" srcset="public/photos/10.jpg" />
+            <img src="public/photos/15.jpg" alt="雯雯与恋人的红色小欢喜合影" />
+          </picture>
+          <div class="chapter-hero__wash" aria-hidden="true"></div>
+          <div class="chapter-hero__title reveal">
+            <p>第二世</p>
+            <h2>红尘小欢喜</h2>
+            <span>这一世的欢喜，是人间烟火里都有你。</span>
+          </div>
+        </div>
+        <div class="chapter-copy reveal">
+          <p>爱不必每一刻都轰轰烈烈。</p>
+          <p>你笑，我陪你笑；你回头，我就在身后。</p>
+          <strong>往后的每一个普通日子。</strong>
+        </div>
+        <div class="photo-flow" id="gallery-second" aria-label="第二世照片"></div>
+      </section>
+
+      <section class="chapter chapter--moon" id="chapter-three" data-chapter="2">
+        <div class="chapter-hero">
+          <picture>
+            <source media="(min-width: 721px)" srcset="public/photos/31.jpg" />
+            <img src="public/photos/30.jpg" alt="雯雯与恋人的白纱合影" />
+          </picture>
+          <div class="chapter-hero__wash" aria-hidden="true"></div>
+          <div class="chapter-hero__title reveal">
+            <p>今生</p>
+            <h2>白首相许</h2>
+            <span>走过两世想象，终于在这一生牵住你。</span>
+          </div>
+        </div>
+        <div class="chapter-copy reveal">
+          <p>婚纱不是故事的结尾。</p>
+          <p>是清晨有你，晚归有灯，</p>
+          <strong>每一次回头，都还能看见彼此。</strong>
+        </div>
+        <div class="photo-flow" id="gallery-third" aria-label="第三世照片"></div>
+      </section>
+
+      <section class="promise" id="promise">
+        <div class="promise__backdrop" aria-hidden="true"></div>
+        <div class="promise__prompt reveal" id="promise-prompt">
+          <p>故事看到这里</p>
+          <h2>还有一句话，只想让你亲手打开。</h2>
+          <button class="seal-button seal-button--red" id="reveal-letter" type="button">
+            <span>雯雯，点亮余生</span>
+          </button>
+        </div>
+        <div class="letter" id="letter" aria-hidden="true">
+          <div class="letter__mosaic" id="letter-mosaic" aria-hidden="true"></div>
+          <article class="letter__paper">
+            <p class="letter__to">雯雯：</p>
+            <p>如果真的有三生，<br />我想每一世都比上一世更早一点遇见你。</p>
+            <p>第一世，我会在人群里认出你；<br />第二世，我会坚定地走向你；<br />这一世，我想把所有平凡日子，认真过成我们的长长久久。</p>
+            <p>照片会褪色，时间会往前，<br />但我看向你的心意，不需要被定格。</p>
+            <p class="letter__vow">三生太远，<br />我只想先把这一生，好好交给你。</p>
+            <p class="letter__sign">牛牛爸爸</p>
+          </article>
+        </div>
+      </section>
+    </main>
+
+    <dialog class="lightbox" id="lightbox">
+      <button class="icon-button lightbox__close" id="close-lightbox" type="button" aria-label="关闭大图">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6 6l12 12M18 6L6 18" /></svg>
+      </button>
+      <button class="icon-button lightbox__previous" id="previous-photo" type="button" aria-label="上一张">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M15 5l-7 7 7 7" /></svg>
+      </button>
+      <img id="lightbox-image" alt="" />
+      <p id="lightbox-count"></p>
+      <button class="icon-button lightbox__next" id="next-photo" type="button" aria-label="下一张">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M9 5l7 7-7 7" /></svg>
+      </button>
+    </dialog>
+
+    <dialog class="film-modal" id="film-modal">
+      <button class="icon-button film-modal__close" id="close-film" type="button" aria-label="关闭短片">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6 6l12 12M18 6L6 18" /></svg>
+      </button>
+      <video id="story-film" controls playsinline preload="metadata" poster="public/photos/30.jpg">
+        <source src="public/video/sansheng-wenwen.mp4" type="video/mp4" />
+      </video>
+      <p class="film-credit">Music: “Moonlight” by Scott Buckley · CC BY 4.0</p>
+    </dialog>
+
+    <script src="app.js" defer></script>
+  </body>
+</html>

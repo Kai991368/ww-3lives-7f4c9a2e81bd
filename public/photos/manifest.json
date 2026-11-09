@@ -1,0 +1,326 @@
+[
+  {
+    "id": 1,
+    "file": "01.jpg",
+    "source": "IMG_5340.jpg",
+    "chapter": "first",
+    "width": 1440,
+    "height": 2160,
+    "orientation": "portrait"
+  },
+  {
+    "id": 2,
+    "file": "02.jpg",
+    "source": "IMG_5349.jpg",
+    "chapter": "first",
+    "width": 1440,
+    "height": 2160,
+    "orientation": "portrait"
+  },
+  {
+    "id": 3,
+    "file": "03.jpg",
+    "source": "IMG_5351.jpg",
+    "chapter": "first",
+    "width": 1440,
+    "height": 2160,
+    "orientation": "portrait"
+  },
+  {
+    "id": 4,
+    "file": "04.jpg",
+    "source": "IMG_5357.jpg",
+    "chapter": "first",
+    "width": 1440,
+    "height": 2160,
+    "orientation": "portrait"
+  },
+  {
+    "id": 5,
+    "file": "05.jpg",
+    "source": "IMG_5358.jpg",
+    "chapter": "first",
+    "width": 1440,
+    "height": 2160,
+    "orientation": "portrait"
+  },
+  {
+    "id": 6,
+    "file": "06.jpg",
+    "source": "IMG_5364.jpg",
+    "chapter": "first",
+    "width": 1440,
+    "height": 2160,
+    "orientation": "portrait"
+  },
+  {
+    "id": 7,
+    "file": "07.jpg",
+    "source": "IMG_5368.jpg",
+    "chapter": "first",
+    "width": 2160,
+    "height": 1440,
+    "orientation": "landscape"
+  },
+  {
+    "id": 8,
+    "file": "08.jpg",
+    "source": "IMG_5377.jpg",
+    "chapter": "first",
+    "width": 1440,
+    "height": 2160,
+    "orientation": "portrait"
+  },
+  {
+    "id": 9,
+    "file": "09.jpg",
+    "source": "IMG_5379.jpg",
+    "chapter": "first",
+    "width": 1440,
+    "height": 2160,
+    "orientation": "portrait"
+  },
+  {
+    "id": 10,
+    "file": "10.jpg",
+    "source": "IMG_5415.jpg",
+    "chapter": "second",
+    "width": 2160,
+    "height": 1440,
+    "orientation": "landscape"
+  },
+  {
+    "id": 11,
+    "file": "11.jpg",
+    "source": "IMG_5418.jpg",
+    "chapter": "second",
+    "width": 1440,
+    "height": 2160,
+    "orientation": "portrait"
+  },
+  {
+    "id": 12,
+    "file": "12.jpg",
+    "source": "IMG_5423.jpg",
+    "chapter": "second",
+    "width": 1440,
+    "height": 2160,
+    "orientation": "portrait"
+  },
+  {
+    "id": 13,
+    "file": "13.jpg",
+    "source": "IMG_5427.jpg",
+    "chapter": "second",
+    "width": 1440,
+    "height": 2160,
+    "orientation": "portrait"
+  },
+  {
+    "id": 14,
+    "file": "14.jpg",
+    "source": "IMG_5428.jpg",
+    "chapter": "second",
+    "width": 1440,
+    "height": 2160,
+    "orientation": "portrait"
+  },
+  {
+    "id": 15,
+    "file": "15.jpg",
+    "source": "IMG_5437.jpg",
+    "chapter": "second",
+    "width": 1440,
+    "height": 2160,
+    "orientation": "portrait"
+  },
+  {
+    "id": 16,
+    "file": "16.jpg",
+    "source": "IMG_5441.jpg",
+    "chapter": "second",
+    "width": 1440,
+    "height": 2160,
+    "orientation": "portrait"
+  },
+  {
+    "id": 17,
+    "file": "17.jpg",
+    "source": "IMG_5446.jpg",
+    "chapter": "second",
+    "width": 1440,
+    "height": 2160,
+    "orientation": "portrait"
+  },
+  {
+    "id": 18,
+    "file": "18.jpg",
+    "source": "IMG_5456.jpg",
+    "chapter": "second",
+    "width": 1440,
+    "height": 2160,
+    "orientation": "portrait"
+  },
+  {
+    "id": 19,
+    "file": "19.jpg",
+    "source": "IMG_5464.jpg",
+    "chapter": "second",
+    "width": 1440,
+    "height": 2160,
+    "orientation": "portrait"
+  },
+  {
+    "id": 20,
+    "file": "20.jpg",
+    "source": "IMG_5466.jpg",
+    "chapter": "second",
+    "width": 1440,
+    "height": 2160,
+    "orientation": "portrait"
+  },
+  {
+    "id": 21,
+    "file": "21.jpg",
+    "source": "IMG_5467.jpg",
+    "chapter": "second",
+    "width": 1440,
+    "height": 2160,
+    "orientation": "portrait"
+  },
+  {
+    "id": 22,
+    "file": "22.jpg",
+    "source": "IMG_5470.jpg",
+    "chapter": "second",
+    "width": 1440,
+    "height": 2160,
+    "orientation": "portrait"
+  },
+  {
+    "id": 23,
+    "file": "23.jpg",
+    "source": "IMG_5473.jpg",
+    "chapter": "second",
+    "width": 1440,
+    "height": 2160,
+    "orientation": "portrait"
+  },
+  {
+    "id": 24,
+    "file": "24.jpg",
+    "source": "IMG_5480.jpg",
+    "chapter": "second",
+    "width": 1440,
+    "height": 2160,
+    "orientation": "portrait"
+  },
+  {
+    "id": 25,
+    "file": "25.jpg",
+    "source": "IMG_5482.jpg",
+    "chapter": "second",
+    "width": 1440,
+    "height": 2160,
+    "orientation": "portrait"
+  },
+  {
+    "id": 26,
+    "file": "26.jpg",
+    "source": "IMG_5271.jpg",
+    "chapter": "third",
+    "width": 1440,
+    "height": 2160,
+    "orientation": "portrait"
+  },
+  {
+    "id": 27,
+    "file": "27.jpg",
+    "source": "IMG_5174.jpg",
+    "chapter": "third",
+    "width": 1440,
+    "height": 2160,
+    "orientation": "portrait"
+  },
+  {
+    "id": 28,
+    "file": "28.jpg",
+    "source": "IMG_5182.jpg",
+    "chapter": "third",
+    "width": 1440,
+    "height": 2160,
+    "orientation": "portrait"
+  },
+  {
+    "id": 29,
+    "file": "29.jpg",
+    "source": "IMG_5184.jpg",
+    "chapter": "third",
+    "width": 1440,
+    "height": 2160,
+    "orientation": "portrait"
+  },
+  {
+    "id": 30,
+    "file": "30.jpg",
+    "source": "IMG_5204.jpg",
+    "chapter": "third",
+    "width": 1440,
+    "height": 2160,
+    "orientation": "portrait"
+  },
+  {
+    "id": 31,
+    "file": "31.jpg",
+    "source": "IMG_5233.jpg",
+    "chapter": "third",
+    "width": 2160,
+    "height": 1440,
+    "orientation": "landscape"
+  },
+  {
+    "id": 32,
+    "file": "32.jpg",
+    "source": "IMG_5247.jpg",
+    "chapter": "third",
+    "width": 1440,
+    "height": 2160,
+    "orientation": "portrait"
+  },
+  {
+    "id": 33,
+    "file": "33.jpg",
+    "source": "IMG_5259.jpg",
+    "chapter": "third",
+    "width": 1440,
+    "height": 2160,
+    "orientation": "portrait"
+  },
+  {
+    "id": 34,
+    "file": "34.jpg",
+    "source": "IMG_5276.jpg",
+    "chapter": "third",
+    "width": 1440,
+    "height": 2160,
+    "orientation": "portrait"
+  },
+  {
+    "id": 35,
+    "file": "35.jpg",
+    "source": "IMG_5284.jpg",
+    "chapter": "third",
+    "width": 1440,
+    "height": 2160,
+    "orientation": "portrait"
+  },
+  {
+    "id": 36,
+    "file": "36.jpg",
+    "source": "IMG_5286.jpg",
+    "chapter": "third",
+    "width": 1440,
+    "height": 2160,
+    "orientation": "portrait"
+  }
+]

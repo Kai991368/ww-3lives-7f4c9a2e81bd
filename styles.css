@@ -1,0 +1,759 @@
+@font-face {
+  font-family: "Sansheng Kai";
+  src: url("public/fonts/simkai.ttf") format("truetype");
+  font-display: swap;
+}
+
+:root {
+  color-scheme: dark;
+  --ink: #111014;
+  --paper: #edf1f2;
+  --mist: #6f8793;
+  --gold: #b99758;
+  --red: #a61f24;
+  --deep-red: #4b0d12;
+  --safe: clamp(20px, 5vw, 76px);
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+  background: var(--ink);
+}
+
+body {
+  margin: 0;
+  overflow-x: hidden;
+  background: var(--ink);
+  color: var(--paper);
+  font-family: "Microsoft YaHei", "PingFang SC", sans-serif;
+  letter-spacing: 0;
+}
+
+button {
+  color: inherit;
+  font: inherit;
+}
+
+button:focus-visible {
+  outline: 2px solid var(--gold);
+  outline-offset: 5px;
+}
+
+.opening {
+  position: fixed;
+  z-index: 100;
+  inset: 0;
+  display: grid;
+  place-items: center;
+  min-height: 100svh;
+  overflow: hidden;
+  background: var(--ink);
+  transition: opacity 1100ms ease, visibility 1100ms;
+}
+
+.opening.is-open {
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+}
+
+.opening__photo {
+  position: absolute;
+  inset: -4%;
+  width: 108%;
+  height: 108%;
+  object-fit: cover;
+  object-position: 48% 36%;
+  filter: saturate(.78) brightness(.7);
+  animation: opening-drift 12s ease-out both;
+}
+
+.opening__veil {
+  position: absolute;
+  inset: 0;
+  background: rgba(12, 15, 20, .42);
+}
+
+.opening__content {
+  position: relative;
+  width: min(620px, calc(100% - 48px));
+  padding: 16vh 0 7vh;
+  text-align: center;
+}
+
+.opening__for {
+  margin: 0 0 18px;
+  color: rgba(255, 255, 255, .76);
+  font-family: "Sansheng Kai", serif;
+  font-size: clamp(20px, 4vw, 31px);
+}
+
+.opening h1 {
+  margin: 0;
+  font-family: "Sansheng Kai", serif;
+  font-size: clamp(72px, 16vw, 154px);
+  font-weight: 400;
+  line-height: .95;
+  text-shadow: 0 4px 36px rgba(0, 0, 0, .5);
+}
+
+.opening__line {
+  max-width: 32em;
+  margin: 32px auto 42px;
+  font-family: "Sansheng Kai", serif;
+  font-size: clamp(18px, 3vw, 25px);
+  line-height: 1.8;
+}
+
+.seal-button {
+  position: relative;
+  min-width: 184px;
+  min-height: 54px;
+  padding: 12px 24px;
+  border: 1px solid rgba(255, 255, 255, .72);
+  border-radius: 2px;
+  background: rgba(17, 16, 20, .32);
+  cursor: pointer;
+  backdrop-filter: blur(10px);
+}
+
+.seal-button::before,
+.seal-button::after {
+  position: absolute;
+  width: 8px;
+  height: 8px;
+  border: solid var(--gold);
+  content: "";
+}
+
+.seal-button::before {
+  top: -4px;
+  left: -4px;
+  border-width: 1px 0 0 1px;
+}
+
+.seal-button::after {
+  right: -4px;
+  bottom: -4px;
+  border-width: 0 1px 1px 0;
+}
+
+.story-nav {
+  position: fixed;
+  z-index: 30;
+  top: 50%;
+  right: max(14px, env(safe-area-inset-right));
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+  translate: 0 -50%;
+  opacity: 0;
+  transition: opacity 600ms ease;
+}
+
+body.story-open .story-nav {
+  opacity: 1;
+}
+
+.story-nav__mark {
+  display: grid;
+  place-items: center;
+  width: 34px;
+  height: 34px;
+  padding: 0;
+  border: 0;
+  background: transparent;
+  cursor: pointer;
+}
+
+.story-nav__mark span {
+  display: grid;
+  place-items: center;
+  width: 24px;
+  height: 24px;
+  border: 1px solid rgba(255, 255, 255, .45);
+  border-radius: 50%;
+  background: rgba(17, 16, 20, .42);
+  font-family: "Sansheng Kai", serif;
+  font-size: 14px;
+  backdrop-filter: blur(8px);
+}
+
+.story-nav__mark i {
+  position: absolute;
+  width: 4px;
+  height: 4px;
+  border-radius: 50%;
+  background: var(--gold);
+  opacity: 0;
+  scale: 0;
+  transition: opacity 220ms, scale 220ms;
+}
+
+.story-nav__mark.is-active i {
+  opacity: 1;
+  scale: 1;
+}
+
+.icon-button {
+  display: grid;
+  place-items: center;
+  width: 38px;
+  height: 38px;
+  padding: 0;
+  border: 1px solid rgba(255, 255, 255, .34);
+  border-radius: 50%;
+  background: rgba(17, 16, 20, .45);
+  cursor: pointer;
+  backdrop-filter: blur(8px);
+}
+
+.icon-button svg {
+  width: 20px;
+  height: 20px;
+  fill: none;
+  stroke: currentColor;
+  stroke-width: 1.7;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+
+.film-button {
+  margin-top: 14px;
+}
+
+.film-button svg,
+.sound-button svg {
+  fill: currentColor;
+  stroke: none;
+}
+
+.sound-button .sound-off,
+.sound-button.is-muted .sound-on {
+  display: none;
+}
+
+.sound-button.is-muted .sound-off {
+  display: block;
+}
+
+.chapter {
+  position: relative;
+  overflow: clip;
+}
+
+.chapter--mist {
+  background: #394b56;
+}
+
+.chapter--moon {
+  background: #dce3e7;
+  color: #181a1d;
+}
+
+.chapter--red {
+  background: #681116;
+}
+
+.chapter-hero {
+  position: relative;
+  min-height: 100svh;
+  overflow: hidden;
+}
+
+.chapter-hero > picture,
+.chapter-hero > picture > img {
+  display: block;
+  width: 100%;
+  height: 100svh;
+}
+
+.chapter-hero > picture > img {
+  object-fit: cover;
+}
+
+.chapter--mist .chapter-hero > picture > img {
+  object-position: 50% 42%;
+}
+
+.chapter--moon .chapter-hero > picture > img {
+  object-position: 50% 36%;
+}
+
+.chapter--red .chapter-hero > picture > img {
+  object-position: 52% 36%;
+}
+
+.chapter-hero__wash {
+  position: absolute;
+  inset: 0;
+  background: rgba(9, 12, 17, .35);
+}
+
+.chapter--moon .chapter-hero__wash {
+  background: rgba(7, 10, 14, .28);
+}
+
+.chapter--red .chapter-hero__wash {
+  background: rgba(47, 2, 5, .26);
+}
+
+.chapter-hero__title {
+  position: absolute;
+  bottom: clamp(72px, 12vh, 150px);
+  left: var(--safe);
+  max-width: min(620px, calc(100% - 2 * var(--safe)));
+  text-shadow: 0 3px 28px rgba(0, 0, 0, .5);
+}
+
+.chapter-hero__title p {
+  margin: 0 0 8px;
+  font-family: "Sansheng Kai", serif;
+  font-size: clamp(20px, 3vw, 32px);
+}
+
+.chapter-hero__title h2 {
+  margin: 0;
+  font-family: "Sansheng Kai", serif;
+  font-size: clamp(64px, 12vw, 136px);
+  font-weight: 400;
+  line-height: 1;
+}
+
+.chapter-hero__title span {
+  display: block;
+  margin-top: 20px;
+  font-family: "Sansheng Kai", serif;
+  font-size: clamp(18px, 2.8vw, 27px);
+}
+
+.chapter-copy {
+  display: grid;
+  place-content: center;
+  min-height: 72svh;
+  padding: 12vh var(--safe);
+  text-align: center;
+  font-family: "Sansheng Kai", serif;
+}
+
+.chapter-copy p,
+.chapter-copy strong {
+  margin: .25em 0;
+  font-size: clamp(23px, 4vw, 43px);
+  font-weight: 400;
+  line-height: 1.8;
+}
+
+.chapter-copy strong {
+  color: #ead5a9;
+}
+
+.chapter--moon .chapter-copy strong {
+  color: #875f28;
+}
+
+.photo-flow {
+  position: relative;
+}
+
+.photo-frame {
+  position: relative;
+  display: block;
+  width: 100%;
+  height: 100svh;
+  min-height: 680px;
+  padding: 0;
+  border: 0;
+  overflow: hidden;
+  background: #101014;
+  cursor: zoom-in;
+  isolation: isolate;
+  --drift: 0;
+}
+
+.photo-frame__backdrop {
+  position: absolute;
+  z-index: -2;
+  inset: -9%;
+  width: 118%;
+  height: 118%;
+  object-fit: cover;
+  filter: blur(28px) saturate(.82) brightness(.62);
+  scale: 1.1;
+  translate: 0 calc(var(--drift) * -34px);
+}
+
+.photo-frame__glow {
+  position: absolute;
+  z-index: -1;
+  inset: 0;
+  background: linear-gradient(180deg, rgba(4, 5, 8, .28), transparent 24%, transparent 76%, rgba(4, 5, 8, .5));
+}
+
+.chapter--red .photo-frame__glow {
+  background: linear-gradient(180deg, rgba(57, 2, 7, .35), transparent 28%, transparent 70%, rgba(57, 2, 7, .58));
+}
+
+.photo-frame__portrait {
+  position: absolute;
+  z-index: 1;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  padding: clamp(18px, 4vw, 42px) clamp(12px, 3vw, 34px) clamp(54px, 8vh, 92px);
+  object-fit: contain;
+  filter: drop-shadow(0 22px 50px rgba(0, 0, 0, .36));
+  scale: .965;
+  translate: 0 calc(var(--drift) * -18px);
+  transition: scale 1400ms cubic-bezier(.16, 1, .3, 1), opacity 900ms ease;
+}
+
+.photo-frame.is-visible .photo-frame__portrait {
+  scale: 1;
+}
+
+.photo-frame::after {
+  position: absolute;
+  z-index: 3;
+  right: 24px;
+  bottom: 22px;
+  color: rgba(255, 255, 255, .72);
+  font-family: "Sansheng Kai", serif;
+  font-size: 16px;
+  content: attr(data-number);
+  text-shadow: 0 1px 8px #000;
+}
+
+.photo-frame__caption {
+  position: absolute;
+  z-index: 3;
+  bottom: 22px;
+  left: 24px;
+  color: rgba(255, 255, 255, .74);
+  font-family: "Sansheng Kai", serif;
+  font-size: 18px;
+  text-shadow: 0 1px 8px #000;
+}
+
+.photo-frame:nth-child(3n + 2) .photo-frame__portrait {
+  padding-top: clamp(36px, 8vh, 110px);
+  padding-bottom: clamp(24px, 4vh, 62px);
+}
+
+.photo-frame:nth-child(4n)::before {
+  position: absolute;
+  z-index: 2;
+  top: 10%;
+  left: -20%;
+  width: 50%;
+  height: 80%;
+  background: linear-gradient(90deg, transparent, rgba(255, 245, 225, .12), transparent);
+  content: "";
+  rotate: 12deg;
+  translate: calc((var(--drift) + 1) * 130%) 0;
+  pointer-events: none;
+}
+
+.reveal,
+.photo-frame {
+  opacity: 0;
+  translate: 0 44px;
+  transition: opacity 900ms ease, translate 1100ms cubic-bezier(.16, 1, .3, 1);
+}
+
+.reveal.is-visible,
+.photo-frame.is-visible {
+  opacity: 1;
+  translate: 0 0;
+}
+
+.promise {
+  position: relative;
+  min-height: 100svh;
+  overflow: hidden;
+  background: var(--ink);
+}
+
+.promise__backdrop {
+  position: absolute;
+  inset: 0;
+  background: url("public/photos/36.jpg") center 42% / cover no-repeat;
+  filter: saturate(.78) brightness(.38);
+}
+
+.promise__prompt {
+  position: relative;
+  z-index: 2;
+  display: grid;
+  place-content: center;
+  min-height: 100svh;
+  padding: var(--safe);
+  text-align: center;
+}
+
+.promise__prompt p {
+  margin: 0 0 14px;
+  font-family: "Sansheng Kai", serif;
+  font-size: clamp(20px, 3vw, 30px);
+}
+
+.promise__prompt h2 {
+  max-width: 18em;
+  margin: 0 auto 42px;
+  font-family: "Sansheng Kai", serif;
+  font-size: clamp(36px, 7vw, 74px);
+  font-weight: 400;
+  line-height: 1.35;
+}
+
+.seal-button--red {
+  justify-self: center;
+  border-color: rgba(255, 219, 200, .72);
+  background: rgba(117, 7, 12, .55);
+}
+
+.letter {
+  position: absolute;
+  z-index: 3;
+  inset: 0;
+  display: grid;
+  place-items: center;
+  min-height: 100svh;
+  padding: max(28px, env(safe-area-inset-top)) var(--safe) max(32px, env(safe-area-inset-bottom));
+  visibility: hidden;
+  opacity: 0;
+  transition: opacity 1600ms ease, visibility 1600ms;
+}
+
+.promise.is-revealed .promise__prompt {
+  opacity: 0;
+  pointer-events: none;
+}
+
+.promise.is-revealed .letter {
+  visibility: visible;
+  opacity: 1;
+}
+
+.letter__mosaic {
+  position: absolute;
+  inset: 0;
+  display: grid;
+  grid-template-columns: repeat(6, 1fr);
+  grid-template-rows: repeat(6, 1fr);
+  opacity: .32;
+}
+
+.letter__mosaic img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  filter: saturate(.65) brightness(.55);
+  scale: 1.08;
+  opacity: 0;
+  transition: opacity 800ms ease, scale 1700ms cubic-bezier(.16, 1, .3, 1);
+  transition-delay: calc(var(--order) * 42ms);
+}
+
+.promise.is-revealed .letter__mosaic img {
+  opacity: 1;
+  scale: 1;
+}
+
+.letter__paper {
+  position: relative;
+  width: min(720px, 92vw);
+  max-height: 88svh;
+  overflow: auto;
+  padding: clamp(28px, 6vw, 64px);
+  border: 1px solid rgba(185, 151, 88, .68);
+  border-radius: 2px;
+  background: rgba(17, 16, 20, .84);
+  box-shadow: 0 30px 100px rgba(0, 0, 0, .5);
+  font-family: "Sansheng Kai", serif;
+  backdrop-filter: blur(18px);
+  opacity: 0;
+  scale: .96;
+  transition: opacity 900ms 950ms ease, scale 1100ms 950ms cubic-bezier(.16, 1, .3, 1);
+}
+
+.promise.is-revealed .letter__paper {
+  opacity: 1;
+  scale: 1;
+}
+
+.letter__paper p {
+  margin: 0 0 1.15em;
+  font-size: clamp(19px, 3vw, 27px);
+  line-height: 1.8;
+}
+
+.letter__to {
+  color: #e7c88f;
+  font-size: clamp(28px, 5vw, 42px) !important;
+}
+
+.letter__vow {
+  color: #f1dcb5;
+  font-size: clamp(26px, 4vw, 38px) !important;
+}
+
+.letter__sign {
+  margin: 1.8em 0 0 !important;
+  text-align: right;
+}
+
+dialog {
+  border: 0;
+  padding: 0;
+  color: var(--paper);
+}
+
+dialog::backdrop {
+  background: rgba(0, 0, 0, .9);
+  backdrop-filter: blur(12px);
+}
+
+.lightbox {
+  width: 100vw;
+  height: 100svh;
+  max-width: none;
+  max-height: none;
+  overflow: hidden;
+  background: transparent;
+}
+
+.lightbox[open] {
+  display: grid;
+  place-items: center;
+}
+
+.lightbox img {
+  width: min(88vw, 1080px);
+  height: min(88svh, 1400px);
+  object-fit: contain;
+}
+
+.lightbox__close,
+.film-modal__close {
+  position: absolute;
+  z-index: 2;
+  top: max(18px, env(safe-area-inset-top));
+  right: max(18px, env(safe-area-inset-right));
+}
+
+.lightbox__previous,
+.lightbox__next {
+  position: absolute;
+  z-index: 2;
+  top: 50%;
+}
+
+.lightbox__previous {
+  left: max(12px, env(safe-area-inset-left));
+}
+
+.lightbox__next {
+  right: max(12px, env(safe-area-inset-right));
+}
+
+#lightbox-count {
+  position: absolute;
+  bottom: max(14px, env(safe-area-inset-bottom));
+  margin: 0;
+  font-family: "Sansheng Kai", serif;
+}
+
+.film-modal {
+  width: 100vw;
+  height: 100svh;
+  max-width: none;
+  max-height: none;
+  background: #050506;
+}
+
+.film-modal[open] {
+  display: grid;
+  place-items: center;
+}
+
+.film-modal video {
+  width: min(100vw, calc(100svh * .5625));
+  height: min(100svh, calc(100vw * 1.7778));
+  background: #000;
+  object-fit: contain;
+}
+
+.film-credit {
+  position: absolute;
+  right: 18px;
+  bottom: 10px;
+  left: 18px;
+  margin: 0;
+  color: rgba(255, 255, 255, .55);
+  font-size: 11px;
+  text-align: center;
+}
+
+@keyframes opening-drift {
+  from { scale: 1.06; }
+  to { scale: 1; }
+}
+
+@media (max-width: 720px) {
+  .story-nav {
+    top: auto;
+    right: 10px;
+    bottom: max(18px, env(safe-area-inset-bottom));
+    flex-direction: row;
+    translate: 0;
+  }
+
+  .film-button {
+    margin-top: 0;
+    margin-left: 8px;
+  }
+
+  .photo-flow {
+    padding: 0;
+  }
+
+  .photo-frame {
+    min-height: 100svh;
+    scroll-snap-align: start;
+  }
+
+  .photo-frame__portrait {
+    padding: 16px 8px 58px;
+  }
+
+  .photo-frame.is-landscape .photo-frame__portrait {
+    padding-right: 0;
+    padding-left: 0;
+  }
+
+  .letter__mosaic {
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-rows: repeat(9, 1fr);
+  }
+
+  .lightbox__previous,
+  .lightbox__next {
+    top: auto;
+    bottom: max(22px, env(safe-area-inset-bottom));
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  *, *::before, *::after {
+    animation-duration: .01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: .01ms !important;
+  }
+}
